@@ -1,2 +1,0 @@
-# freedom-number
-FREEDOM BABY

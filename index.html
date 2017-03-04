@@ -1,0 +1,85 @@
+<!--
+**************************************************
+Developed by Jenn Vargas for Academy of Arbitrage
+http://mostlybrilliant.co
+@jennjenn
+**************************************************
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Freedom Number Calculator | Academy of Arbitrage</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style type="text/css">
+    	#header{
+    		margin-top: 3em;
+    		text-align: center;
+    	}
+    	#logo img{
+  			height: 100px;  		
+    	}
+    	#calculator{
+    		text-align: center;
+    		margin-top: 2em;
+    		font-size: 1.6em;
+    	}
+    	#freedom-result{
+    		text-align: center;
+    		margin-top: 2em;
+    		display: none;
+    	}
+    	.btn-success{
+    		font-weight: bold;
+    	}
+    	#freedom-number-output{
+    		font-size: 4em;
+    		color: #31c268;
+    		font-weight: bold;
+    	}
+    </style>
+  </head>
+  <body>
+  <div id="container">
+  	<div class="row">
+  		<div id="header" class="col-xs-12 col-sm-6 col-sm-offset-3">
+  			<div id="logo"><a href="http://academyofarbitrage.com" target="_blank"><img src="https://images.clickfunnels.com/d3/1e3c60e48b11e6bbfb7338e4e95b08/Academy-of-Arbitrage.png" alt="Academy ofArbitrage" /></a></div>
+  			<h1>What Is Your Freedom Number?</h1>
+  		</div>
+ 	</div>
+ 	<div class="row">
+		<div id="calculator">
+  			<form id="freedom-number" class="form-inline">
+  			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+  				<label for="expenses">Total Monthly Expenses:</label>
+  				<input type="text" id="expenses" class="form-control" placeholder="1234.56" />
+  				<button id="calculate" class="btn btn-success">CALCULATE</button>
+  			</div>
+  			</form>
+  		</div>
+  	</div>
+  	<div class="row">
+  		<div id="freedom-result" class="col-xs-12 col-sm-6 col-sm-offset-3">
+  			<h2>Your Freedom Number is:</h2>
+  			<div id="freedom-number-output"></div>
+  		</div>
+  	</div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script>
+  $("#freedom-number").submit(function(e){
+  	e.preventDefault();
+  	var baseNum = $("#expenses").val();
+  	var outputNum = ((baseNum * 1.3) * 12) / 365;
+  	outputNum = Math.round(outputNum);
+  	$('#freedom-number-output').text(outputNum);
+  	$('#freedom-result').fadeIn();
+  });
+  </script>
+  </body>
+</html>
